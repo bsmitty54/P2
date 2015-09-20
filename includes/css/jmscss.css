@@ -249,6 +249,10 @@ legend {color:#560753; font-family: annie-use-your-telescope; font-style: italic
 
 }
 
+.pwform span {
+  color: red;
+}
+
 input[type="checkbox"], input[type="radio"] {
    width: 18px;
    height: 18px;

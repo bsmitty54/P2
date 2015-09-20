@@ -12,3 +12,15 @@ work
 swim
 shoot
 jog
+sit
+stand
+exercise
+sprint
+kick
+punch
+draw
+paint
+build
+destroy
+create
+think

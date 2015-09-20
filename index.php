@@ -136,15 +136,14 @@
             <div class='field'>
                 <label for='words'>How Many Words:</label>
                 <select id='words' name='words'>
-                  <option selected='selected' value='1'>1</option>
-                  <option value='2'>2</option>
+                  <option selected='selected' value='2'>2</option>
                   <option value='3'>3</option>
                   <option value='4'>4</option>
                   <option value='5'>5</option>
                   <option value='6'>6</option>
                   <option value='7'>7</option>
                   <option value='8'>8</option>
-                  <option value='8'>9</option>
+                  <option value='9'>9</option>
                 </select>
               </div>
               <div class='field'>
@@ -167,6 +166,11 @@
                       <option value='4'>4</option>
                       <option value='5'>5</option>
                     </select>
+                    <?php
+                      if(isset($_GET["words"]) && (int) $_GET["schar"] > (int) $_GET["words"] ) {
+                        echo "<span>&nbsp;You can't have more special characters than words</span>";
+                      }
+                    ?>
                   </div>
                   <div class='field'>
                       <label for='digits'>How Many Digits:</label>
@@ -178,6 +182,11 @@
                         <option value='4'>4</option>
                         <option value='5'>5</option>
                       </select>
+                      <?php
+                        if(isset($_GET["words"]) && (int) $_GET["digits"] > (int) $_GET["words"] ) {
+                          echo "<span>&nbsp;You can't have more digits than words</span>";
+                        }
+                      ?>
                   </div>
                   <br>
                   <label for='separator'>Separator:</label>
@@ -187,7 +196,7 @@
                   <div class='field'>
                       <label for='pwcnt'>How Many Passwords:</label>
                       <select id='pwcnt' name='pwcnt'>
-                        <option selected='selected' value='1'>0</option>
+                        <option selected='selected' value='1'>1</option>
                         <option value='2'>2</option>
                         <option value='3'>3</option>
                         <option value='4'>4</option>
@@ -210,19 +219,21 @@
         <div class="passwords">
           <?php
             if(isset($_GET["words"])) {
-              echo "<br>";
-              echo '<form class="pwform">';
-              echo "<legend>Here are your passwords:</legend>";
-              //echo "<pre>";
-              //print_r($_GET);
-              //print_r($wordlist);
-              //print_r($pw);
-              //echo "</pre>";
-              foreach($pw as $pword)
-              echo '<div class="pword">' . $pword . '</div>';
-              echo "<br>";
-              echo "</form>";
-              echo "<br><br>";
+              if ((int) $_GET["words"] >= (int) $_GET["schar"] && (int) $_GET["words"] >= (int) $_GET["digits"]) {
+                echo "<br>";
+                echo '<form class="pwform">';
+                echo "<legend>Here are your passwords:</legend>";
+                //echo "<pre>";
+                //print_r($_GET);
+                //print_r($wordlist);
+                //print_r($pw);
+                //echo "</pre>";
+                foreach($pw as $pword)
+                echo '<div class="pword">' . $pword . '</div>';
+                echo "<br>";
+                echo "</form>";
+                echo "<br><br>";
+              }
             }
           ?>
 
