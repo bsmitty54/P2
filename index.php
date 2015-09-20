@@ -46,13 +46,6 @@
 </script>
 
 
-<?php print_r($_GET); ?>
-<?php require '../logic.php'; ?>
-<?php print_r($wordlist); ?>
-
-
-
-
 <div id="wrapper" class="container-fluid">
 
 
@@ -74,8 +67,8 @@
 
             <li><a class="" href="http://p1.jsmitty54php.com">Project One - View</a></li>
             <li><a class="" href="https://github.com/bsmitty54/P1">Project One - Github</a></li>
-            <li><a class="" href="">Project Two - View</a></li>
-            <li><a class="" href="">Project Two - Github</a></li>
+            <li><a class="" href="http://p2.jsmitty54php.com">Project Two - View</a></li>
+            <li><a class="" href="https://github.com/bsmitty54/P2">Project Two - Github</a></li>
             <li><a class="" href="">Project Three - View</a></li>
             <li><a class="" href="">Project Three - Github</a></li>
             <li><a class="" href="">Project Four - View</a></li>
