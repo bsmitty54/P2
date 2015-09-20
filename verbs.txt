@@ -1,0 +1,14 @@
+run
+jump
+talk
+walk
+skip
+write
+sleep
+tumble
+drink
+eat
+work
+swim
+shoot
+jog
