@@ -254,3 +254,11 @@ input[type="checkbox"], input[type="radio"] {
    height: 18px;
    vertical-align: top;
 }
+
+div.pword {
+  margin-left: 20px;
+  font-size:18px;
+  color:#560753;
+  font-weight: bold;
+  font-family:serif;
+}

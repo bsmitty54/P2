@@ -8,9 +8,46 @@
   <link href="includes/css/jmscss.css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  <?php require '../logic.php'; ?>
 </head>
 
-<body onload="setDropDowns()">
+<?php
+  if(isset($_GET["wordcat"])) {
+      echo '<body onload="setDropDowns()">';
+    } else {
+      echo '<body>';
+    }
+  if(isset($_GET["words"])) {
+    $words = $_GET["words"];
+  } else {
+    $words = "1";
+  }
+  if(isset($_GET["wordcat"])) {
+    $wordcat = $_GET["wordcat"];
+  } else {
+    $wordcat = "Random";
+  }
+  if(isset($_GET["schar"])) {
+    $schar = $_GET["schar"];
+  } else {
+    $schar = "0";
+  }
+  if(isset($_GET["digits"])) {
+    $digits = $_GET["digits"];
+  } else {
+    $digits = "0";
+  }
+  if(isset($_GET["separator"])) {
+    $separator = $_GET["separator"];
+  } else {
+    $separator = "Hyphen";
+  }
+  if(isset($_GET["pwcnt"])) {
+    $pwcnt = $_GET["pwcnt"];
+  } else {
+    $pwcnt = "1";
+  }
+?>
 
 <script>
 
@@ -18,19 +55,23 @@
       //Get select object
   var objSelect = document.getElementById("words");
   //Set selected
-  setSelectedValue(objSelect, <?php echo $_GET["words"]; ?>);
+  setSelectedValue(objSelect, <?php echo $words; ?>);
 
   var objSelect = document.getElementById("wordcat");
   //Set selected
-  setSelectedValue(objSelect, <?php echo "'" . $_GET["wordcat"] . "'"; ?>);
+  setSelectedValue(objSelect, <?php echo "'" . $wordcat . "'"; ?>);
 
   var objSelect = document.getElementById("schar");
   //Set selected
-  setSelectedValue(objSelect, <?php echo $_GET["schar"]; ?>);
+  setSelectedValue(objSelect, <?php echo $schar; ?>);
 
   var objSelect = document.getElementById("digits");
   //Set selected
-  setSelectedValue(objSelect, <?php echo $_GET["digits"]; ?>);
+  setSelectedValue(objSelect, <?php echo $digits; ?>);
+
+  var objSelect = document.getElementById("pwcnt");
+  //Set selected
+  setSelectedValue(objSelect, <?php echo $pwcnt; ?>);
 
     function setSelectedValue(selectObj, valueToSet) {
       for (var i = 0; i < selectObj.options.length; i++) {
@@ -109,7 +150,7 @@
               <div class='field'>
                   <label for='wordcat'>Word Category:</label>
                   <select id='wordcat' name='wordcat'>
-                    <option selected='selected' value='random'>Random</option>
+                    <option selected='selected' value='Random'>Random</option>
                     <option value='Animals'>Animals</option>
                     <option value='Things'>Things</option>
                     <option value='Verbs'>Verbs</option>
@@ -143,13 +184,50 @@
                   <input type="radio" name="separator" id="Hyphen" value="Hyphen" checked> Hyphen
                   <input type="radio" name="separator" id="Space" value="Space"> Space
                   <input type="radio" name="separator" id="CamelCase" value="CamelCase"> CamelCase
+                  <div class='field'>
+                      <label for='pwcnt'>How Many Passwords:</label>
+                      <select id='pwcnt' name='pwcnt'>
+                        <option selected='selected' value='1'>0</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
+                      </select>
+                  </div>
 
                   <br><br><label for="submit">&nbsp</label>
                   <button type="submit" class="btn btn-primary">Generate the Passwords</button>
             </div>
-          </div>
+
           </fieldset>
         </form>
+
+        <div class="passwords">
+          <?php
+            if(isset($_GET["words"])) {
+              echo "<br>";
+              echo '<form class="pwform">';
+              echo "<legend>Here are your passwords:</legend>";
+              //echo "<pre>";
+              //print_r($_GET);
+              //print_r($wordlist);
+              //print_r($pw);
+              //echo "</pre>";
+              foreach($pw as $pword)
+              echo '<div class="pword">' . $pword . '</div>';
+              echo "<br>";
+              echo "</form>";
+              echo "<br><br>";
+            }
+          ?>
+
+        </div>
+      </div>
 
 
   </div>
@@ -161,7 +239,7 @@
  </div>
 
 <script>
-document.getElementById(<?php echo "'" . $_GET["separator"] . "'"; ?>).checked = true;
+document.getElementById(<?php echo "'" . $separator . "'"; ?>).checked = true;
 </script>
 
 </body>
