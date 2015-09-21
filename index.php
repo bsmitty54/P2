@@ -132,7 +132,7 @@
         <form method='GET' action='index.php'>
           <fieldset>
             <div class='pwform'>
-            <legend>Password Generator Options:</legend>
+            <p class="legend">Password Generator Options:</p>
             <div class='field'>
                 <label for='words'>How Many Words:</label>
                 <select id='words' name='words'>
