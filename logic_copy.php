@@ -15,35 +15,83 @@ if(isset($_GET["wordcat"])) {
 }
 
 
-//load the word files
+//load animals
+$file = fopen('animals.txt','r') or die($php_errormsg);
+while (! feof($file)) {
+    if ($line = fgets($file)) {
+        $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
+        // load the words now
 
-load_words("animals.txt","Animals");
-load_words("things.txt","Things");
-load_words("colors.txt","Colors");
-load_words("verbs.txt","Verbs");
-
-function load_words($fname,$catname) {
-  global $wordlist;
-  global $wcat,$wc;
-  $file = fopen($fname,'r') or die($php_errormsg);
-  while (! feof($file)) {
-      if ($line = fgets($file)) {
-          $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
-          // load the words now
-
-          for ($i = 0; $i < count($words); $i++) {
-            // load the words
-            if($wcat==$catname || $wcat=="Random") {
-              $wordlist[$wc] = $words[$i];
-              $wc++;
-            }
-
+        for ($i = 0; $i < count($words); $i++) {
+          // load the words
+          if($wcat=="Animals" || $wcat=="Random") {
+            $wordlist[$wc] = $words[$i];
+            $wc++;
           }
-      }
-  }
-  fclose($file) or die($php_errormsg);
 
+        }
+    }
 }
+fclose($file) or die($php_errormsg);
+
+//load things
+$file = fopen('things.txt','r') or die($php_errormsg);
+while (! feof($file)) {
+    if ($line = fgets($file)) {
+        $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
+        // load the words now
+
+        for ($i = 0; $i < count($words); $i++) {
+          // load the words
+          if($wcat=="Things" || $wcat=="Random") {
+            $wordlist[$wc] = $words[$i];
+            $wc++;
+          }
+
+        }
+    }
+}
+fclose($file) or die($php_errormsg);
+
+//load verbs
+$file = fopen('verbs.txt','r') or die($php_errormsg);
+while (! feof($file)) {
+    if ($line = fgets($file)) {
+        $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
+        // load the words now
+
+        for ($i = 0; $i < count($words); $i++) {
+          // load the words
+          if($wcat=="Verbs" || $wcat=="Random") {
+            $wordlist[$wc] = $words[$i];
+            $wc++;
+          }
+
+        }
+    }
+}
+fclose($file) or die($php_errormsg);
+
+//load animals
+$file = fopen('colors.txt','r') or die($php_errormsg);
+while (! feof($file)) {
+    if ($line = fgets($file)) {
+        $words = preg_split('/\s+/',$line,-1,PREG_SPLIT_NO_EMPTY);
+        // load the words now
+
+        for ($i = 0; $i < count($words); $i++) {
+          // load the words
+          if($wcat=="Colors" || $wcat=="Random") {
+            $wordlist[$wc] = $words[$i];
+            $wc++;
+          }
+
+        }
+    }
+}
+fclose($file) or die($php_errormsg);
+
+
 
 // now generate the passwords based on the user's selections
 
