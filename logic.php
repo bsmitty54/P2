@@ -97,10 +97,14 @@ $pw = Array();
 
 if (isset($_GET["words"])) {
   $pwcnt = (int) $_GET["pwcnt"];
+  $schar = (int) $_GET["schar"];
+  $digits = (int) $_GET["digits"];
   for ($x = 0; $x < $pwcnt; $x++) {
 
     // first get the proper # of randomm words from the word list
 
+    $sc = "!@#$%&*()+{}[]\/?";
+    $dig = "0123456789";
     $rwords = Array();
     $num = (int) $_GET["words"];
     for ($i = 0; $i < $num; $i ++ ) {
@@ -129,6 +133,23 @@ if (isset($_GET["words"])) {
         $rwords[$i] = " " . $rwords[$i];
       }
       // now add a special character or a digit if needed
+
+      if ($schar > $i) {
+        //add a special character - remove the character from the string to
+        //prevent duplicates
+        $r = rand(0,strlen($sc)-1);
+        $c = substr($sc,$r,1);
+        $sc = str_replace($c,'',$sc);
+        $rwords[$i] = $rwords[$i] . $c;
+      }
+      if ($digits > $i) {
+        //add a digit - remove the digit from the string to
+        //prevent duplicates
+        $r = rand(0,strlen($dig)-1);
+        $c = substr($dig,$r,1);
+        $dig = str_replace($c,'',$dig);
+        $rwords[$i] = $rwords[$i] . $c;
+      }
 
       // now concatenate the word to the password
       $pword = $pword . $rwords[$i];

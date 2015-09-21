@@ -33,7 +33,7 @@
 #center {
   background-color:#fff;
   border-color: #fff;
-  border:none; height: 500px;
+  border:none; height: 100%;
   overflow: auto;
   border-radius:10px;
   margin-top: 0px;
@@ -41,16 +41,17 @@
 }
 
 #main {
-  border: none;
-  height: 500px;
+  border-bottom: solid;
+  height: 100%;
   overflow:auto;
   border-radius:0px;
   margin-top: -15px;
+  margin-bottom: 15px;
 }
 
 #leftgutter {
   border: none;
-  height: 500px;
+  height: 100%;
   overflow: auto;
   background-color:#DFE2F1;
   border-radius:00px;
@@ -60,7 +61,7 @@
 
 #rightside {
   border: none;
-  height: 500px;
+  height: 100%;
   overflow: auto;
   background-color:#DFE2F1;
   border-radius:00px;
@@ -73,7 +74,12 @@
   margin-bottom: 20px;
 }
 
-#maincontent {margin-top: 0px}
+#maincontent {
+  height: 530px;
+  margin-top: 0px;
+  border-bottom: solid thin;
+  margin-bottom: 15px;
+}
 
 
 figure {
@@ -219,6 +225,7 @@ legend {color:#560753; font-family: annie-use-your-telescope; font-style: italic
     width: 700px;
     background: white;
     margin: 5px;
+    margin-left: 50px;
     padding: 5px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
