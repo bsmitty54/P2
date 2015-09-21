@@ -189,10 +189,10 @@
                       ?>
                   </div>
                   <br>
-                  <label for='separator'>Separator:</label>
-                  <input type="radio" id = "separator" name="separator" id="Hyphen" value="Hyphen" checked> Hyphen
-                  <input type="radio" id = "separator" name="separator" id="Space" value="Space"> Space
-                  <input type="radio" id = "separator" name="separator" id="CamelCase" value="CamelCase"> CamelCase
+                  <label>Separator:</label>
+                  <input type="radio" name="separator" id="Hyphen" value="Hyphen" checked> Hyphen
+                  <input type="radio" name="separator" id="Space" value="Space"> Space
+                  <input type="radio" name="separator" id="CamelCase" value="CamelCase"> CamelCase
                   <div class='field'>
                       <label for='pwcnt'>How Many Passwords:</label>
                       <select id='pwcnt' name='pwcnt'>
