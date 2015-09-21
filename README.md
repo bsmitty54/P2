@@ -1,14 +1,13 @@
 # Joe Smith - Project 1 - Dynamic Web Applications - Susan Buck - Fall 2015
 
 ## Live URL
-<http://p1.jsmitty54php.com>
+<http://p2.jsmitty54php.com>
 
 ## Description
-A basic portfolio page using HTML and CSS to show familiarity with git and
-deploying from a local server to a live server
+An xkcd password generator, with various parameters that allow the user to customize their passwords
 
 ## Demo
-None
+
 
 ## Details for teaching team
 No login required.

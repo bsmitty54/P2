@@ -120,7 +120,16 @@ a {
 	color: #560753;
 }
 
-legend {color:#560753; font-family: annie-use-your-telescope; font-style: italic; text-align:center}
+legend, .pwform  p.legend {
+  color:#560753;
+  font-family: annie-use-your-telescope;
+  font-style: italic;
+  text-align:center;
+  font-size: 21px;
+  line-height: inherit;
+  border: 0;
+  border-bottom: solid thin;
+}
 
 .col-lg-3,
 .col-md-3,

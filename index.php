@@ -190,9 +190,9 @@
                   </div>
                   <br>
                   <label for='separator'>Separator:</label>
-                  <input type="radio" name="separator" id="Hyphen" value="Hyphen" checked> Hyphen
-                  <input type="radio" name="separator" id="Space" value="Space"> Space
-                  <input type="radio" name="separator" id="CamelCase" value="CamelCase"> CamelCase
+                  <input type="radio" id = "separator" name="separator" id="Hyphen" value="Hyphen" checked> Hyphen
+                  <input type="radio" id = "separator" name="separator" id="Space" value="Space"> Space
+                  <input type="radio" id = "separator" name="separator" id="CamelCase" value="CamelCase"> CamelCase
                   <div class='field'>
                       <label for='pwcnt'>How Many Passwords:</label>
                       <select id='pwcnt' name='pwcnt'>
@@ -209,8 +209,8 @@
                       </select>
                   </div>
 
-                  <br><br><label for="submit">&nbsp</label>
-                  <button type="submit" class="btn btn-primary">Generate the Passwords</button>
+                  <br><br><label for="submit">&nbsp;</label>
+                  <button type="submit" id="submit" class="btn btn-primary">Generate the Passwords</button>
             </div>
 
           </fieldset>
@@ -222,7 +222,7 @@
               if ((int) $_GET["words"] >= (int) $_GET["schar"] && (int) $_GET["words"] >= (int) $_GET["digits"]) {
                 echo "<br>";
                 echo '<form class="pwform">';
-                echo "<legend>Here are your passwords:</legend>";
+                echo "<p class='legend'>Here are your passwords:</p>";
                 //echo "<pre>";
                 //print_r($_GET);
                 //print_r($wordlist);
