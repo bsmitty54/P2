@@ -7,7 +7,7 @@ http://p2.jsmitty54php.com
 An xkcd password generator, with various parameters that allow the user to customize their passwords
 
 ## Demo
-http://screencast.com/t/1EKiAcqd
+http://screencast.com/t/OJCLfbgu1Lx5
 
 ## Details for teaching team
 No login required.
