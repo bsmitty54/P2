@@ -17,10 +17,18 @@ if(isset($_GET["wordcat"])) {
 
 //load the word files
 
-load_words("animals.txt","Animals");
-load_words("things.txt","Things");
-load_words("colors.txt","Colors");
-load_words("verbs.txt","Verbs");
+if($wcat=="Animals" || $wcat=="Random") {
+  load_words("animals.txt","Animals");
+}
+if($wcat=="Things" || $wcat=="Random") {
+  load_words("things.txt","Things");
+}
+if($wcat=="Colors" || $wcat=="Random") {
+  load_words("colors.txt","Colors");
+}
+if($wcat=="Verbs" || $wcat=="Random") {
+  load_words("verbs.txt","Verbs");
+}
 
 function load_words($fname,$catname) {
   global $wordlist;
